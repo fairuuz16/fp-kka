@@ -1,0 +1,82 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Proyeksi Jalur Kereta Api Whoosh</title>
+    <link rel="stylesheet" href="https://unpkg.com/leaflet@1.7.1/dist/leaflet.css" />
+    <link rel="stylesheet" href="https://unpkg.com/leaflet-control-geocoder/dist/Control.Geocoder.css" />
+    <script src="https://unpkg.com/leaflet@1.7.1/dist/leaflet.js"></script>
+    <script src="https://unpkg.com/leaflet-control-geocoder/dist/Control.Geocoder.js"></script>
+    <style>
+        #map {
+            height: 80vh;
+            width: 100%;
+        }
+
+        form {
+            margin-top: 10px;
+        }
+    </style>
+</head>
+
+<body>
+    <form id="data-form" action="/find_path" method="post">
+        <label for="user-data">Masukkan Data</label><br>
+        <label for="start_node">Start Node:</label>
+        <input type="text" id="start_node" name="start_node" required><br>
+        <label for="finish_node">Finish Node:</label>
+        <input type="text" id="finish_node" name="finish_node" required><br>
+        <button type="submit">Find Path</button>
+    </form>
+    
+    <p id="response"></p>
+
+    <div id="map"></div>
+
+    <script>
+        var map = L.map('map').setView([-7.2575, 112.7521], 8);
+        let googleStreets = L.tileLayer('http://{s}.google.com/vt/lyrs=m&x={x}&y={y}&z={z}', {
+            maxZoom: 20,
+            subdomains: ['mt0', 'mt1', 'mt2', 'mt3']
+        });
+        googleStreets.addTo(map);
+
+        // Tambahkan marker untuk setiap stasiun atau node
+        for (var node in koor) {
+            var marker = L.marker([koor[node].lat, koor[node].lon]).addTo(map);
+            marker.bindPopup("<b>" + node + "</b>").openPopup();
+        }
+        
+        // Marker for Surabaya
+        var surabayaMarker = L.marker([-7.2575, 112.7521]).addTo(map);
+        surabayaMarker.bindPopup("<b>Surabaya</b>").openPopup();
+
+        document.getElementById("data-form").addEventListener("submit", function (e) {
+            e.preventDefault();
+            let startNode = document.getElementById("start_node").value;
+            let finishNode = document.getElementById("finish_node").value;
+            sendDataToPython([startNode, finishNode]);
+        });
+
+        function sendDataToPython(data) {
+            var formData = new FormData();
+            formData.append('start_node', data[0]);
+            formData.append('finish_node', data[1]);
+
+            fetch("/process_data", {
+                method: "POST",
+                body: formData
+            })
+            .then(response => response.json())
+            .then(data => {
+                console.log(data);
+                updateMap(data);
+            });
+        }
+
+    </script>
+</body>
+
+</html>

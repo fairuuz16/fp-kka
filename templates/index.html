@@ -4,11 +4,15 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Proyeksi Jalur Kereta Api Whoosh</title>
+    <title>Peta Jalur Kereta Api Whoosh</title>
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.0.2/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-EVSTQN3/azprG1Anm3QDgpJLIm9Nao0Yz1ztcQTwFspd3yD65VohhpuuCOmLASjC" crossorigin="anonymous">
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.0.2/dist/js/bootstrap.bundle.min.js" integrity="sha384-MrcW6ZMFYlzcLA8Nl+NtUVF0sA7MsXsP1UyJoMp4YLEuNSfAP+JcXn/tWtIaxVXM" crossorigin="anonymous"></script>
     <link rel="stylesheet" href="https://unpkg.com/leaflet@1.7.1/dist/leaflet.css" />
     <link rel="stylesheet" href="https://unpkg.com/leaflet-control-geocoder/dist/Control.Geocoder.css" />
     <script src="https://unpkg.com/leaflet@1.7.1/dist/leaflet.js"></script>
     <script src="https://unpkg.com/leaflet-control-geocoder/dist/Control.Geocoder.js"></script>
+    <script src="static/data/stasiun.geojson"></script>
+    <script src="static/data/rel.geojson"></script>
     <style>
         #map {
             height: 80vh;
@@ -22,6 +26,9 @@
 </head>
 
 <body>
+    <div style="align-items: center; background-color: black; height: 100px;" class="row text-center">
+        <h3 class="text-white">Proyeksi Jalur Kereta Api Whoosh</h3>
+    </div>
     <form id="data-form" action="/find_path" method="post">
         <label for="user-data">Masukkan Data</label><br>
         <label for="start_node">Start Node:</label>
@@ -67,7 +74,10 @@
 
             fetch("/process_data", {
                 method: "POST",
-                body: formData
+                body: JSON.stringify({ data: data }),
+                headers: {
+                    "Content-Type": "application/json"
+                }
             })
             .then(response => response.json())
             .then(data => {

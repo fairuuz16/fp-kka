@@ -91,7 +91,6 @@ g.add_edge('CIREBON', 'JATIBARANG', 40)
 g.add_edge('JATIBARANG', 'CIKAMPEK', 98)
 g.add_edge('CIKAMPEK', 'KARAWANG', 22)
 
-
 # JALUR SELATAN
 g.add_edge('SURABAYA GUBENG', 'SEPANJANG', 45)
 g.add_edge('SEPANJANG',	'MOJOKERTO', 23)
@@ -111,7 +110,11 @@ g.add_edge('TASIKMALAYA', 'CIPEUNDEUY', 33)
 g.add_edge('CIPEUNDEUY', 'NAGREG', 43)
 g.add_edge('NAGREG', 'PADALARANG', 45)
 
-# Add heuristic 
+# JALUR TAMBAHAN
+g.add_edge('HALIM',	'PASAR SENEN',	9)
+g.add_edge('PADALARANG', 'TEGALUAR', 28)
+
+# HEURISTIK STASIUN 
 g.add_static_heuristic('SURABAYA PASAR TURI', 35)
 g.add_static_heuristic('LAMONGAN', 60)
 g.add_static_heuristic('BOJONEGORO', 50)
@@ -161,7 +164,12 @@ g.add_static_heuristic('TASIKMALAYA', 60)
 g.add_static_heuristic('CIPEUNDEUY', 70)
 g.add_static_heuristic('NAGREG', 80)
 g.add_static_heuristic('PADALARANG', 50)
-                       
+
+g.add_static_heuristic('HALIM', 35)
+g.add_static_heuristic('PASAR SENEN', 35)
+g.add_static_heuristic('PADALARANG', 50)
+g.add_static_heuristic('TEGALUAR', 45)
+
 station = {
     # STASIUN JALUR UTARA
     "SURABAYA PASAR TURI": {

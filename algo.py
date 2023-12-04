@@ -71,6 +71,18 @@ g.add_edge('CIREBON', 'JATIBARANG', 40)
 g.add_edge('JATIBARANG', 'CIKAMPEK', 98)
 g.add_edge('CIKAMPEK', 'KARAWANG', 22)
 
+g.add_edge('LAMONGAN', 'SURABAYA PASAR TURI', 38)
+g.add_edge('BOJONEGORO', 'LAMONGAN', 62)
+g.add_edge('CEPU', 'BOJONEGORO', 36)
+g.add_edge('NGROMBO', 'CEPU', 80)
+g.add_edge('SEMARANG TAWANG', 'NGROMBO', 49)
+g.add_edge('PEKALONGAN', 'SEMARANG TAWANG', 89)
+g.add_edge('TEGAL', 'PEKALONGAN', 60)
+g.add_edge('CIREBON', 'TEGAL',	71)
+g.add_edge('JATIBARANG', 'CIREBON', 40)
+g.add_edge('CIKAMPEK', 'JATIBARANG', 98)
+g.add_edge('KARAWANG', 'CIKAMPEK', 22)
+
 # JALUR TENGAH
 g.add_edge('SURABAYA GUBENG', 'SEPANJANG', 45)
 g.add_edge('SEPANJANG',	'MOJOKERTO', 45)
@@ -89,6 +101,22 @@ g.add_edge('CIREBON', 'JATIBARANG', 40)
 g.add_edge('JATIBARANG', 'CIKAMPEK', 98)
 g.add_edge('CIKAMPEK', 'KARAWANG', 22)
 
+g.add_edge('SEPANJANG', 'SURABAYA GUBENG', 45)
+g.add_edge('MOJOKERTO', 'SEPANJANG', 45)
+g.add_edge('MOJOKERTO',	'JOMBANG', 23)
+g.add_edge('KERTOSONO', 'JOMBANG', 38)
+g.add_edge('MADIUN', 'KERTOSONO', 68)
+g.add_edge('WALIKUKUN', 'MADIUN', 43)
+g.add_edge('SRAGEN', 'WALIKUKUN', 23)
+g.add_edge('SOLO BALAPAN', 'SRAGEN', 30)
+g.add_edge('GUNDIH', 'SOLO BALAPAN', 41)
+g.add_edge('SEMARANG TAWANG', 'GUNDIH', 66)
+g.add_edge('PEKALONGAN', 'SEMARANG TAWANG', 89)
+g.add_edge('TEGAL', 'PEKALONGAN', 60)
+g.add_edge('CIREBON', 'TEGAL',	71)
+g.add_edge('JATIBARANG', 'CIREBON', 40)
+g.add_edge('CIKAMPEK', 'JATIBARANG', 98)
+g.add_edge('KARAWANG', 'CIKAMPEK', 22)
 
 # JALUR SELATAN
 g.add_edge('SURABAYA GUBENG', 'SEPANJANG', 45)
@@ -109,7 +137,35 @@ g.add_edge('TASIKMALAYA', 'CIPEUNDEUY', 33)
 g.add_edge('CIPEUNDEUY', 'NAGREG', 43)
 g.add_edge('NAGREG', 'PADALARANG', 45)
 
-# Add heuristic 
+g.add_edge('SEPANJANG', 'SURABAYA GUBENG', 45)
+g.add_edge('MOJOKERTO', 'SEPANJANG', 23)
+g.add_edge('JOMBANG', 'MOJOKERTO', 38)
+g.add_edge('KERTOSONO', 'JOMBANG', 68)
+g.add_edge('MADIUN', 'KERTOSONO', 43)
+g.add_edge('WALIKUKUN', 'MADIUN', 23)
+g.add_edge('SRAGEN', 'WALIKUKUN', 23)
+g.add_edge('SOLO BALAPAN', 'SRAGEN', 30)
+g.add_edge('TUGU', 'SOLO BALAPAN', 56)
+g.add_edge('KEDUNDANG', 'TUGU', 29)
+g.add_edge('KUTOARJO', 'KEDUNDANG', 36)
+g.add_edge('KEBUMEN', 'KUTOARJO', 28)
+g.add_edge('KROYA', 'KEBUMEN', 47)
+g.add_edge('TASIKMALAYA', 'KROYA', 130)
+g.add_edge('CIPEUNDEUY', 'TASIKMALAYA', 33)
+g.add_edge('NAGREG', 'CIPEUNDEUY', 43)
+g.add_edge('PADALARANG', 'NAGREG', 45)
+
+
+# JALUR TAMBAHAN
+g.add_edge('HALIM',	'PASAR SENEN',	9)
+g.add_edge('PADALARANG', 'TEGALUAR', 28)
+g.add_edge('SURABAYA PASAR TURI', 'SURABAYA GUBENG', 5)
+
+g.add_edge('PASAR SENEN', 'HALIM', 9)
+g.add_edge('TEGALUAR', 'PADALARANG', 28)
+g.add_edge('SURABAYA GUBENG', 'SURABAYA PASAR TURI', 5)
+
+# HEURISTIK STASIUN 
 g.add_static_heuristic('SURABAYA PASAR TURI', 35)
 g.add_static_heuristic('LAMONGAN', 60)
 g.add_static_heuristic('BOJONEGORO', 50)
@@ -160,8 +216,13 @@ g.add_static_heuristic('CIPEUNDEUY', 70)
 g.add_static_heuristic('NAGREG', 80)
 g.add_static_heuristic('PADALARANG', 50)
 
+g.add_static_heuristic('HALIM', 35)
+g.add_static_heuristic('PASAR SENEN', 35)
+g.add_static_heuristic('PADALARANG', 50)
+g.add_static_heuristic('TEGALUAR', 45)
+
 start_node = 'PADALARANG'
-finish_node = 'SURABAYA GUBENG'
+finish_node = 'SURABAYA PASAR TURI'
 
 result = g.a_star_search(start_node, finish_node)
 
@@ -172,19 +233,22 @@ else:
 
 #########################################
 
-# G = nx.DiGraph()
+G = nx.DiGraph()
 
-# for node, neighbors in g.graph.items():
-#     for neighbor in neighbors:
-#         G.add_edge(node, neighbor, weight=g.edge_costs.get((node, neighbor, 0)))
+for node, neighbors in g.graph.items():
+    for neighbor in neighbors:
+        G.add_edge(node, neighbor, weight=g.edge_costs.get((node, neighbor, 0)))
 
-# pos = nx.spring_layout(G)
+pos = nx.circular_layout(G)
 
-# node_labels = {node: f"{node}\nH: {g.static_heuristic.get(node, 0)}" for node in G.nodes}
-# edge_labels = {(node, neighbor): g.edge_costs.get((node, neighbor), 0) for node, neighbor in G.edges}
+node_labels = {node: f"{node}\nH: {g.static_heuristic.get(node, 0)}" for node in G.nodes}
+edge_labels = {(node, neighbor): g.edge_costs.get((node, neighbor), 0) for node, neighbor in G.edges}
 
-# nx.draw(G, pos, with_labels=True, labels=node_labels, node_size=700, node_color="skyblue", font_size=8)
-# nx.draw_networkx_edge_labels(G, pos, edge_labels=edge_labels, font_color='red')
+plt.figure(figsize=(12, 8))
 
-# # Tampilkan gambar
-# plt.show()
+nx.draw(G, pos, with_labels=True, labels=node_labels, node_size=700, node_color="skyblue", font_size=8)
+nx.draw_networkx_edge_labels(G, pos, edge_labels=edge_labels, font_color='red')
+ 
+
+# Tampilkan gambar
+plt.show()

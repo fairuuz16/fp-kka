@@ -44,13 +44,40 @@
     <div id="map"></div>
 
     <script>
+        
+        document.addEventListener("DOMContentLoaded", function () {
+            var map = L.map('map').setView([-7.299072344884493, 109.94257314468808], 7); // Ganti dengan koordinat dan zoom yang sesuai
+    
+            L.tileLayer('https://{s}.tile.openstreetmap.org/{z}/{x}/{y}.png', {
+                attribution: '© OpenStreetMap contributors'
+            }).addTo(map);
+    
+            // Tambahkan layer GeoJSON ke peta
+            fetch('static/data/stasiun.geojson')
+            .then(response => response.json())
+            .then(data => {
+                var stasiunLayer = L.geoJSON(data).addTo(map);
+            })
+            .catch(error => {
+                console.error('Error loading GeoJSON data:', error);
+            });
+            fetch('static/data/rel.geojson')
+            .then(response => response.json())
+            .then(data => {
+                var relLayer = L.geoJSON(data).addTo(map);
+            })
+            .catch(error => {
+                console.error('Error loading GeoJSON data:', error);
+            });
+        });
+    
         document.getElementById("data-form").addEventListener("submit", function (e) {
             e.preventDefault();
             let startNode = document.getElementById("start_node").value;
             let finishNode = document.getElementById("finish_node").value;
             sendDataToPython([startNode, finishNode]);
         });
-
+    
         function sendDataToPython(data) {
             fetch("/process_data", {
                 method: "POST",
@@ -62,10 +89,12 @@
             .then(response => response.json())
             .then(data => {
                 console.log(data);
+                // Tambahkan kode di sini untuk menampilkan hasil algoritma, misalnya:
+                document.getElementById("response").innerText = "Hasil Algoritma: " + data.stasiun + " ";
             });
         }
-
     </script>
+    
 </body>
 
 </html>

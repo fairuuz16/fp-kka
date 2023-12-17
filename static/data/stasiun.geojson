@@ -4,7 +4,7 @@
       {
         "type": "Feature",
         "properties": {
-          "id": "STASIUN GUBENG"
+          "id": "GUBENG"
         },
         "geometry": {
           "coordinates": [
@@ -17,7 +17,7 @@
       {
         "type": "Feature",
         "properties": {
-          "id": "STASIUN MOJOKERTO"
+          "id": "MOJOKERTO"
         },
         "geometry": {
           "coordinates": [
@@ -30,7 +30,7 @@
       {
         "type": "Feature",
         "properties": {
-          "id": "STASIUN JOMBANG"
+          "id": "JOMBANG"
         },
         "geometry": {
           "coordinates": [
@@ -43,7 +43,7 @@
       {
         "type": "Feature",
         "properties": {
-          "id": "STASIUN KERTOSONO"
+          "id": "KERTOSONO"
         },
         "geometry": {
           "coordinates": [
@@ -56,7 +56,7 @@
       {
         "type": "Feature",
         "properties": {
-          "id": "STASIUN MADIUN"
+          "id": "MADIUN"
         },
         "geometry": {
           "coordinates": [
@@ -69,7 +69,7 @@
       {
         "type": "Feature",
         "properties": {
-          "id": "STASIUN WALIKUKUN"
+          "id": "WALIKUKUN"
         },
         "geometry": {
           "coordinates": [
@@ -83,7 +83,7 @@
       {
         "type": "Feature",
         "properties": {
-          "id": "STASIUN SRAGEN"
+          "id": "SRAGEN"
         },
         "geometry": {
           "coordinates": [
@@ -97,7 +97,7 @@
       {
         "type": "Feature",
         "properties": {
-          "id": "STASIUN SOLO BALAPAN"
+          "id": "SOLO BALAPAN"
         },
         "geometry": {
           "coordinates": [
@@ -110,7 +110,7 @@
       {
         "type": "Feature",
         "properties": {
-          "id": "STASIUN GUNDIH"
+          "id": "GUNDIH"
         },
         "geometry": {
           "coordinates": [
@@ -123,7 +123,7 @@
       {
         "type": "Feature",
         "properties": {
-          "id": "STASIUN SEMARANG TAWANG"
+          "id": "SEMARANG TAWANG"
         },
         "geometry": {
           "coordinates": [
@@ -136,7 +136,7 @@
       {
         "type": "Feature",
         "properties": {
-          "id": "STASIUN PEKALONGAN"
+          "id": "PEKALONGAN"
         },
         "geometry": {
           "coordinates": [
@@ -149,7 +149,7 @@
       {
         "type": "Feature",
         "properties": {
-          "id": "STASIUN TEGAL"
+          "id": "TEGAL"
         },
         "geometry": {
           "coordinates": [
@@ -163,7 +163,7 @@
       {
         "type": "Feature",
         "properties": {
-          "id": "STASIUN CIREBON"
+          "id": "CIREBON"
         },
         "geometry": {
           "coordinates": [
@@ -176,7 +176,7 @@
       {
         "type": "Feature",
         "properties": {
-          "id": "STASIUN JATIBARANG"
+          "id": "JATIBARANG"
         },
         "geometry": {
           "coordinates": [
@@ -189,7 +189,7 @@
       {
         "type": "Feature",
         "properties": {
-          "id": "STASIUN CIKAMPEK"
+          "id": "CIKAMPEK"
         },
         "geometry": {
           "coordinates": [
@@ -202,7 +202,7 @@
       {
         "type": "Feature",
         "properties": {
-          "id": "STASIUN KARAWANG"
+          "id": "KARAWANG"
         },
         "geometry": {
           "coordinates": [
@@ -216,7 +216,7 @@
       {
         "type": "Feature",
         "properties": {
-          "id": "STASIUN SURABAYA PASAR TURI"
+          "id": "SURABAYA PASAR TURI"
         },
         "geometry": {
           "coordinates": [
@@ -229,7 +229,7 @@
       {
         "type": "Feature",
         "properties": {
-          "id": "STASIUN LAMONGAN"
+          "id": "LAMONGAN"
         },
         "geometry": {
           "coordinates": [
@@ -242,7 +242,7 @@
       {
         "type": "Feature",
         "properties": {
-          "id": "STASIUN BOJONEGORO"
+          "id": "BOJONEGORO"
         },
         "geometry": {
           "coordinates": [
@@ -255,7 +255,7 @@
       {
         "type": "Feature",
         "properties": {
-          "id": "STASIUN CEPU"
+          "id": "CEPU"
         },
         "geometry": {
           "coordinates": [
@@ -269,7 +269,7 @@
       {
         "type": "Feature",
         "properties": {
-          "id": "STASIUN NGROMBO"
+          "id": "NGROMBO"
         },
         "geometry": {
           "coordinates": [
@@ -283,7 +283,7 @@
       {
         "type": "Feature",
         "properties": {
-          "id": "STASIUN YOGYAKARTA"
+          "id": "TUGU"
         },
         "geometry": {
           "coordinates": [
@@ -297,7 +297,7 @@
       {
         "type": "Feature",
         "properties": {
-          "id": "STASIUN KEDUNDANG"
+          "id": "KEDUNDANG"
         },
         "geometry": {
           "coordinates": [
@@ -311,7 +311,7 @@
       {
         "type": "Feature",
         "properties": {
-          "id": "STASIUN KUTOARJO"
+          "id": "KUTOARJO"
         },
         "geometry": {
           "coordinates": [
@@ -325,7 +325,7 @@
       {
         "type": "Feature",
         "properties": {
-          "id": "STASIUN KEBUMEN"
+          "id": "KEBUMEN"
         },
         "geometry": {
           "coordinates": [
@@ -339,7 +339,7 @@
       {
         "type": "Feature",
         "properties": {
-          "id": "STASIUN KROYA"
+          "id": "KROYA"
         },
         "geometry": {
           "coordinates": [
@@ -353,7 +353,7 @@
       {
         "type": "Feature",
         "properties": {
-          "id": "STASIUN TASIKMALAYA"
+          "id": "TASIKMALAYA"
         },
         "geometry": {
           "coordinates": [
@@ -367,7 +367,7 @@
       {
         "type": "Feature",
         "properties": {
-          "id": "STASIUN CIPEUNDEUY"
+          "id": "CIPEUNDEUY"
         },
         "geometry": {
           "coordinates": [
@@ -381,7 +381,7 @@
       {
         "type": "Feature",
         "properties": {
-          "id": "STASIUN NAGREG"
+          "id": "NAGREG"
         },
         "geometry": {
           "coordinates": [
@@ -395,7 +395,7 @@
       {
         "type": "Feature",
         "properties": {
-          "id": "STASIUN BANDUNG"
+          "id": "BANDUNG"
         },
         "geometry": {
           "coordinates": [

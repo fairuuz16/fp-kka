@@ -227,194 +227,241 @@ g.add_static_heuristic('TEGALUAR', 45)
 station = {
     # STASIUN JALUR UTARA
     "SURABAYA PASAR TURI": {
+        "name" : "SURABAYA PASAR TURI",
         "lat": -7.24817,
         "lon": 112.7312
     },
     "LAMONGAN": {
+        "name" : "LAMONGAN",
         "lat": -7.11249,
         "lon": 112.4202
     },
     "BOJONEGORO": {
+        "name" : "BOJONEGORO",
         "lat": -7.16437,
         "lon": 111.8868
     },
     "CEPU": {
+        "name" : "CEPU",
         "lat": -7.15417,
         "lon": 111.5912
     },
     "NGROMBO": {
+        "name" : "NGROMBO",
         "lat": -7.14526,
         "lon": 110.9004
     },
     "SEMARANG TAWANG": {
+        "name" : "SEMARANG TAWANG",
         "lat": -6.96448,
         "lon": 110.4282
     },
     "PEKALONGAN": {
+        "name" : "PEKALONGAN",
         "lat": -6.88977,
         "lon": 109.6642
     },
     "TEGAL": {
+        "name" : "TEGAL",
         "lat": -6.86737,
         "lon": 109.1428
     },
     "CIREBON": {
+        "name" : "CIREBON",
         "lat": -6.70551,
         "lon": 108.5554
     },
     "JATIBARANG": {
+        "name" : "JATIBARANG",
         "lat": -6.4729,
         "lon": 108.306
     },
     "CIKAMPEK": {
+        "name" : "CIKAMPEK",
         "lat": -6.40607,
         "lon": 107.459
     },
     "KARAWANG": {
+        "name" : "KARAWANG",
         "lat": -6.30518,
         "lon": 107.3002
     },
 
     # STASIUN JALUR TENGAH
     "SURABAYA GUBENG": {
+        "name" : "SURABAYA GUBENG",
         "lat": -7.2652,
         "lon": 112.7522
     },
     "SEPANJANG": {
+        "name" : "SEPANJANG",
         "lat": -7.34717,
         "lon": 112.6978
     },
     "MOJOKERTO": {
+        "name" : "MOJOKERTO",
         "lat": -7.47241,
         "lon": 112.4344
     },
     "JOMBANG": {
+        "name" : "JOMBANG",
         "lat": -7.5578,
         "lon": 112.2334
     },
     "KERTOSONO": {
+        "name" : "KERTOSONO",
         "lat": -7.5918,
         "lon": 112.1008
     },
     "MADIUN": {
+        "name" : "MADIUN",
         "lat": -7.61841,
         "lon": 111.525
     },
     "WALIKUKUN": {
+        "name" : "WALIKUKUN",
         "lat": -7.39868,
         "lon": 111.2246
     },
     "SRAGEN": {
+        "name" : "SRAGEN",
         "lat": -7.42938,
         "lon": 111.018
     },
     "SOLO BALAPAN": {
+        "name" : "SOLO BALAPAN",
         "lat": -7.55719,
         "lon": 110.8214
     },
     "GUNDIH": {
+        "name" : "GUNDIH",
         "lat": -7.21869,
         "lon": 110.9
     },
     "SEMARANG TAWANG": {
+        "name" : "SEMARANG TAWANG",
         "lat": -6.96448,
         "lon": 110.4282
     },
     "PEKALONGAN": {
+        "name" : "PEKALONGAN",
         "lat": -6.88977,
         "lon": 109.6642
     },
     "TEGAL": {
+        "name" : "TEGAL",
         "lat": -6.86737,
         "lon": 109.1428
     },
     "CIREBON": {
+        "name" : "CIREBON",
         "lat": -6.70551,
         "lon": 108.5554
     },
     "JATIBARANG": {
+        "name" : "JATIBARANG",
         "lat": -6.4729,
         "lon": 108.306
     },
     "CIKAMPEK": {
+        "name" : "CIKAMPEK",
         "lat": -6.40607,
         "lon": 107.459
     },
     "KARAWANG": {
+        "name" : "KARAWANG",
         "lat": -6.30518,
         "lon": 107.3002
     },
 
     # STASIUN JALUR SELATAN
     "SURABAYA GUBENG": {
-    "lat": -7.2652,
-    "lon": 112.7522
+        "name" : "SURABAYA GUBENG",
+        "lat": -7.2652,
+        "lon": 112.7522
     },
     "SEPANJANG": {
+        "name" : "SEPANJANG",
         "lat": -7.34717,
         "lon": 112.6978
     },
     "MOJOKERTO": {
+        "name" : "MOJOKERTO",
         "lat": -7.47241,
         "lon": 112.4344
     },
     "JOMBANG": {
+        "name" : "JOMBANG",
         "lat": -7.5578,
         "lon": 112.2334
     },
     "KERTOSONO": {
+        "name" : "KERTOSONO",
         "lat": -7.5918,
         "lon": 112.1008
     },
     "MADIUN": {
+        "name" : "MADIUN",
         "lat": -7.61841,
         "lon": 111.525
     },
     "WALIKUKUN": {
+        "name" : "WALIKUKUN",
         "lat": -7.39868,
         "lon": 111.2246
     },
     "SRAGEN": {
+        "name" : "SRAGEN",
         "lat": -7.42938,
         "lon": 111.018
     },
     "SOLO BALAPAN": {
+        "name" : "SOLO BALAPAN",
         "lat": -7.55719,
         "lon": 110.8214
     },
     "TUGU": {
+        "name" : "TUGU",
         "lat": -7.78918,
         "lon": 110.3636
     },
     "KEDUNDANG": {
+        "name" : "KEDUNDANG",
         "lat": -7.85919,
         "lon": 110.2094
     },
     "KUTOARJO": {
+        "name" : "KUTOARJO",
         "lat": -7.7262,
         "lon": 109.9074
     },
     "KEBUMEN": {
+        "name" : "KEBUMEN",
         "lat": -7.68188,
         "lon": 109.6622
     },
     "KROYA": {
+        "name" : "KROYA",
         "lat": -7.63339,
         "lon": 109.2538
     },
     "TASIKMALAYA": {
+        "name" : "TASIKMALAYA",
         "lat": -7.32257,
         "lon": 108.2242
     },
     "CIPEUNDEUY": {
+        "name" : "CIPEUNDEUY",
         "lat": -7.09357,
         "lon": 108.1006
     },
     "NAGREG": {
+        "name" : "NAGREG",
         "lat": -7.01819,
         "lon": 107.8862
     },
     "PADALARANG": {
+        "name" : "PADALARANG",
         "lat": -6.84227,
         "lon": 107.4976
     }
@@ -434,6 +481,7 @@ def process_data():
     if len(data) == 2:
         rute = []
         goal = []
+        stasiun = []
 
         start_node, finish_node = data
 
@@ -446,15 +494,20 @@ def process_data():
             print(path)
             
             for place in path:
-                rute.append([station[place]["lat"], station[place]["lon"]]) 
+                rute.append([station[place]["lat"], station[place]["lon"]])
+
+            for stop in path:
+                stasiun.append([" " + station[stop]["name"]]) 
 
             goal = [station[path[-1]]["lat"], station[path[-1]]["lon"]]
+            name = [station[path[-1]]["name"]]
             
         print("Ini rute.", rute)
             
         resp = {
             "path": rute,
-            "goal": goal
+            "goal": goal,
+            "stasiun": stasiun
         }
         return jsonify(resp)
     else:

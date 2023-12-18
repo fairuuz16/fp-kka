@@ -5,43 +5,98 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>FP KKA</title>
-    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.0.2/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-EVSTQN3/azprG1Anm3QDgpJLIm9Nao0Yz1ztcQTwFspd3yD65VohhpuuCOmLASjC" crossorigin="anonymous">
-    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.0.2/dist/js/bootstrap.bundle.min.js" integrity="sha384-MrcW6ZMFYlzcLA8Nl+NtUVF0sA7MsXsP1UyJoMp4YLEuNSfAP+JcXn/tWtIaxVXM" crossorigin="anonymous"></script>
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.0.2/dist/css/bootstrap.min.css" rel="stylesheet"
+        integrity="sha384-EVSTQN3/azprG1Anm3QDgpJLIm9Nao0Yz1ztcQTwFspd3yD65VohhpuuCOmLASjC" crossorigin="anonymous">
     <link rel="stylesheet" href="https://unpkg.com/leaflet@1.7.1/dist/leaflet.css" />
     <link rel="stylesheet" href="https://unpkg.com/leaflet-control-geocoder/dist/Control.Geocoder.css" />
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.0.2/dist/js/bootstrap.bundle.min.js"
+        integrity="sha384-MrcW6ZMFYlzcLA8Nl+NtUVF0sA7MsXsP1UyJoMp4YLEuNSfAP+JcXn/tWtIaxVXM"
+        crossorigin="anonymous"></script>
     <script src="https://unpkg.com/leaflet@1.7.1/dist/leaflet.js"></script>
     <script src="https://unpkg.com/leaflet-control-geocoder/dist/Control.Geocoder.js"></script>
     <script src="static/data/stasiun.geojson"></script>
     <script src="static/data/rel.geojson"></script>
 
     <style>
-        #map {
-            height: 80vh;
-            width: 100%;
+        body {
+            font-family: 'Arial', sans-serif;
+            margin: 0;
+            padding: 0;
         }
 
-        form {
-            margin-top: 10px;
+        #header {
+            background-color: #343a40;
+            color: #fff;
+            padding: 15px 0;
+            text-align: center;
+        }
+
+        #container {
+            display: flex;
+        }
+
+        #form-container {
+            flex: 1;
+            padding: 20px;
+            background-color: #f8f9fa;
+            border-radius: 10px;
+            box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
+        }
+
+        #map-container {
+            flex: 2;
+            height: 100vh;
+            position: relative;
+        }
+
+        #map {
+            height: 100%;
+            width: 100%;
+            position: absolute;
+        }
+
+        #response-container {
+            max-height: 300px; /* Adjust the maximum height as needed */
+            overflow-y: auto;
+            margin-top: 20px;
+            padding: 10px;
+            border: 1px solid #ccc;
+            border-radius: 5px;
+        }
+        #response {
+            font-weight: bold;
         }
     </style>
 </head>
 
 <body>
-    <div style="align-items: center; background-color: grey; height: 75px;" class="row text-center">
-        <h3 class="text-white">Proyeksi Jalur Kereta Api Whoosh</h3>
+    <div id="header">
+        <h3>Proyeksi Jalur Kereta Api Whoosh</h3>
     </div>
-    <form id="data-form" action="/find_path" method="post">
-        <label for="user-data">Masukkan Data</label><br>
-        <label for="start_node">Start Node:</label>
-        <input type="text" id="start_node" name="start_node" required><br>
-        <label for="finish_node">Finish Node:</label>
-        <input type="text" id="finish_node" name="finish_node" required><br>
-        <button type="submit">Find Path</button>
-    </form>
-    
-    <p id="response"></p>
 
-    <div id="map"></div>
+    <div id="container">
+        <div id="form-container">
+            <form id="data-form" action="/find_path" method="post">
+                <div class="mb-3">
+                    <label for="start_node" class="form-label">Dari</label>
+                    <input type="text" id="start_node" name="start_node" class="form-control" required>
+                </div>
+                <div class="mb-3">
+                    <label for="finish_node" class="form-label">Ke</label>
+                    <input type="text" id="finish_node" name="finish_node" class="form-control" required>
+                </div>
+                <button type="submit" class="btn btn-primary">Find Route</button>
+            </form>
+
+            <div id="response-container">
+                <p id="response"></p>
+            </div>
+        </div>
+
+        <div id="map-container">
+            <div id="map"></div>
+        </div>
+    </div>
 
     <script>
         
@@ -90,7 +145,7 @@
             .then(data => {
                 console.log(data);
                 // Tambahkan kode di sini untuk menampilkan hasil algoritma, misalnya:
-                document.getElementById("response").innerText = "Hasil Algoritma: " + data.stasiun + " ";
+                document.getElementById("response").innerText = data.stasiun + " ";
             });
         }
     </script>

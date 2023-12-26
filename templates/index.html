@@ -55,15 +55,8 @@
             position: absolute;
         }
 
-        #response-container {
-            max-height: 300px; /* Adjust the maximum height as needed */
-            overflow-y: auto;
-            margin-top: 20px;
-            padding: 10px;
-            border: 1px solid #ccc;
-            border-radius: 5px;
-        }
         #response {
+            margin-top: 20px;
             font-weight: bold;
         }
     </style>
@@ -88,9 +81,7 @@
                 <button type="submit" class="btn btn-primary">Find Route</button>
             </form>
 
-            <div id="response-container">
-                <p id="response"></p>
-            </div>
+            <p id="response"></p>
         </div>
 
         <div id="map-container">
@@ -145,7 +136,7 @@
             .then(data => {
                 console.log(data);
                 // Tambahkan kode di sini untuk menampilkan hasil algoritma, misalnya:
-                document.getElementById("response").innerText = data.stasiun + " ";
+                document.getElementById("response").innerText = "Hasil Algoritma: " + data.stasiun + " ";
             });
         }
     </script>

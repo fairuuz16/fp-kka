@@ -22,30 +22,43 @@
             font-family: 'Arial', sans-serif;
             margin: 0;
             padding: 0;
+            background-color: #f0f2f5;
         }
 
         #header {
-            background-color: #343a40;
+            background: linear-gradient(90deg, #343a40, #6c757d);
             color: #fff;
-            padding: 15px 0;
+            padding: 20px;
             text-align: center;
+            box-shadow: 0 4px 8px rgba(0, 0, 0, 0.2);
+        }
+
+        #header h3 {
+            margin: 0;
+            font-size: 24px;
+            font-weight: 700;
+            text-transform: uppercase;
+            letter-spacing: 1.5px;
         }
 
         #container {
             display: flex;
+            flex-wrap: wrap;
+            padding: 20px;
         }
 
         #form-container {
             flex: 1;
-            padding: 20px;
-            background-color: #f8f9fa;
+            padding: 30px;
+            background-color: #fff;
             border-radius: 10px;
-            box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
+            box-shadow: 0 0 20px rgba(0, 0, 0, 0.1);
+            margin-right: 20px;
         }
 
         #map-container {
             flex: 2;
-            height: 100vh;
+            height: 80vh;
             position: relative;
         }
 
@@ -53,11 +66,51 @@
             height: 100%;
             width: 100%;
             position: absolute;
+            border-radius: 10px;
+            box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
         }
 
         #response {
             margin-top: 20px;
             font-weight: bold;
+            color: #17a2b8;
+        }
+
+        .form-label {
+            font-weight: bold;
+            color: #343a40;
+        }
+
+        .form-control {
+            border-radius: 8px;
+        }
+
+        .btn-primary {
+            background-color: #007bff;
+            border: none;
+            border-radius: 8px;
+            padding: 10px 20px;
+            font-size: 16px;
+            transition: background-color 0.3s ease;
+        }
+
+        .btn-primary:hover {
+            background-color: #0056b3;
+        }
+
+        .form-label i {
+            margin-right: 8px;
+        }
+
+        #footer {
+            background-color: #343a40;
+            color: #fff;
+            text-align: center;
+            padding: 15px;
+            position: relative;
+            bottom: 0;
+            width: 100%;
+            margin-top: 30px;
         }
     </style>
 </head>
@@ -71,12 +124,12 @@
         <div id="form-container">
             <form id="data-form" action="/find_path" method="post">
                 <div class="mb-3">
-                    <label for="start_node" class="form-label">Dari</label>
-                    <input type="text" id="start_node" name="start_node" class="form-control" required>
+                    <label for="start_node" class="form-label"><i class="bi bi-geo-alt-fill"></i> Dari</label>
+                    <input type="text" id="start_node" name="start_node" class="form-control" placeholder="Masukkan stasiun awal" required>
                 </div>
                 <div class="mb-3">
-                    <label for="finish_node" class="form-label">Ke</label>
-                    <input type="text" id="finish_node" name="finish_node" class="form-control" required>
+                    <label for="finish_node" class="form-label"><i class="bi bi-geo-fill"></i> Ke</label>
+                    <input type="text" id="finish_node" name="finish_node" class="form-control" placeholder="Masukkan stasiun tujuan" required>
                 </div>
                 <button type="submit" class="btn btn-primary">Find Route</button>
             </form>
@@ -89,8 +142,11 @@
         </div>
     </div>
 
+    <div id="footer">
+        <p>&copy; 2024 Proyeksi Jalur Kereta Api Whoosh | All Rights Reserved</p>
+    </div>
+
     <script>
-        
         document.addEventListener("DOMContentLoaded", function () {
             var map = L.map('map').setView([-7.299072344884493, 109.94257314468808], 7); // Ganti dengan koordinat dan zoom yang sesuai
     
